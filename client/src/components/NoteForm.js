@@ -11,7 +11,7 @@ const NoteForm = ({ token }) => {
 
   useEffect(() => {
     if (id) {
-      axios.get(`http://localhost:3000/notes/${id}`, {
+      axios.get(`https://not-tutma-sitesi.onrender.com/notes/${id}`, {
         headers: { Authorization: `Bearer ${token}` }
       })
       .then((response) => {
@@ -28,7 +28,7 @@ const NoteForm = ({ token }) => {
     const noteData = { title, text };
 
     if (id) {
-      axios.put(`http://localhost:3000/notes/${id}`, noteData, {
+      axios.put(`https://not-tutma-sitesi.onrender.com/notes/${id}`, noteData, {
         headers: { Authorization: `Bearer ${token}` }
       })
       .then((response) => {
@@ -37,7 +37,7 @@ const NoteForm = ({ token }) => {
       })
       .catch((error) => console.error('Error editing note:', error));
     } else {
-      axios.post('http://localhost:3000/notes', noteData, {
+      axios.post('https://not-tutma-sitesi.onrender.com/notes', noteData, {
         headers: { Authorization: `Bearer ${token}` }
       })
       .then((response) => {

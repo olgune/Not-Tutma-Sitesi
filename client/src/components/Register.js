@@ -12,7 +12,7 @@ const Register = () => {
     e.preventDefault();
 
     try {
-      await axios.post('http://localhost:3000/auth/register', { email, password });
+      await axios.post('https://not-tutma-sitesi.onrender.com/auth/register', { email, password });
       navigate('/login');
     } catch (err) {
       setError('Registration failed: ' + (err.response?.data?.message || err.message));

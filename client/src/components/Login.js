@@ -12,7 +12,7 @@ const Login = ({ setToken }) => {
     e.preventDefault();
 
     try {
-      const response = await axios.post('http://localhost:3000/auth/login', { email, password });
+      const response = await axios.post('https://not-tutma-sitesi.onrender.com/auth/login', { email, password });
       setToken(response.data.token);
       navigate('/notes');
     } catch (err) {

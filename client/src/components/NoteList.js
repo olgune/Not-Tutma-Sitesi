@@ -8,7 +8,7 @@ const NoteList = ({ token }) => {
 
   useEffect(() => {
     if (token) {
-      axios.get('http://localhost:3000/notes', {
+      axios.get('https://not-tutma-sitesi.onrender.com/notes', {
         headers: { Authorization: `Bearer ${token}` }
       })
       .then((response) => setNotes(response.data.data))
@@ -17,7 +17,7 @@ const NoteList = ({ token }) => {
   }, [token]);
 
   const handleDelete = (id) => {
-    axios.delete(`http://localhost:3000/notes/${id}`, {
+    axios.delete(`https://not-tutma-sitesi.onrender.com/notes/${id}`, {
       headers: { Authorization: `Bearer ${token}` }
     })
     .then((response) => {
