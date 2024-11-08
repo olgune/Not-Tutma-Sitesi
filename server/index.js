@@ -7,8 +7,8 @@ import authRoute from './routes/authRoute.js';
 
 dotenv.config({ path: './server/.env' }); 
 const corsOptions = {
-   origin: 'http://localhost:3001',  
-   credentials: true,                
+   origin: process.env.NODE_ENV === 'production' ? 'https://not-tutma-sitesi-five.vercel.app' : 'http://localhost:3001',
+   credentials: true,        
 };
 
 const app = express();
